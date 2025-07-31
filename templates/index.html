@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Housing Price Predictor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #dbe9f4, #fefefe);
+      margin: 0;
+      padding: 30px;
+      color: #333;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background-color: #fff;
+      padding: 30px 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #004080;
+      margin-bottom: 25px;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 12px;
+      font-weight: 600;
+      color: #444;
+    }
+
+    form input[type="number"],
+    form select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+    }
+
+    button[type="submit"] {
+      margin-top: 25px;
+      width: 100%;
+      background-color: #007BFF;
+      color: white;
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    .result {
+      margin-top: 25px;
+      padding: 15px;
+      background-color: #e6ffed;
+      border: 1px solid #b2f2bb;
+      border-radius: 10px;
+      color: #155724;
+      font-size: 18px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Let's check the cost to build your dream house.</h1>
+    <form method="POST">
+      <label>Area (sq ft): <input type="number" name="area" required min="700" max="20000"></label>
+      <label>Bedrooms: <input type="number" name="bedrooms" required max="10"></label>
+      <label>Bathrooms: <input type="number" name="bathrooms" required max="10"></label>
+      <label>Stories: <input type="number" name="stories" required max="10"></label>
+      <label>Parking: <input type="number" name="parking" required max="4"></label>
+
+      <label>Main Road:
+        <select name="mainroad">
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </label>
+
+      <label>Guest Room:
+        <select name="guestroom">
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </label>
+
+      <label>Basement:
+        <select name="basement">
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </label>
+
+      <label>Hot Water Heating:
+        <select name="hotwaterheating">
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </label>
+
+      <label>Air Conditioning:
+        <select name="airconditioning">
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </label>
+
+      <label>Preferred Area:
+        <select name="prefarea">
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </label>
+
+      <label>Furnishing Status:
+        <select name="furnishingstatus">
+          <option value="semi-furnished">Semi-Furnished</option>
+          <option value="unfurnished">Unfurnished</option>
+        </select>
+      </label>
+
+      <button type="submit">Predict</button>
+    </form>
+
+    {% if result %}
+      <div class="result">🏠 Predicted Price: ₹ {{ result }}</div>
+    {% endif %}
+  </div>
+</body>
+</html>

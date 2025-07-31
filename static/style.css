@@ -1,0 +1,47 @@
+body {
+  font-family: sans-serif;
+  background-color: #f7f7f7;
+  padding: 20px;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+}
+
+form label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+input, select, button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #007BFF;
+  color: white;
+  margin-top: 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.result {
+  margin-top: 20px;
+  font-size: 18px;
+  text-align: center;
+  font-weight: bold;
+}
